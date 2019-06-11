@@ -1,11 +1,24 @@
 package com.vitkus.biudzetasapp;
 
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PajamuIrasas {
 	private double suma;
 	private Date data;
 	private int kategorija = 0;
+	private static final AtomicInteger count = new AtomicInteger(0); 
+	private boolean pozymisArIBanka;
+	private String papildomaInfo;
+
+	public PajamuIrasas(double suma, boolean pozymisArIBanka, String papildomaInfo) {
+		super();
+		this.suma = suma;
+		this.pozymisArIBanka = pozymisArIBanka;
+		this.papildomaInfo = papildomaInfo;
+	    kategorija = count.incrementAndGet(); 
+		
+	}
 
 	public Date getData() {
 		return data;
@@ -17,17 +30,6 @@ public class PajamuIrasas {
 
 	public int getKategorija() {
 		return kategorija;
-	}
-
-	private boolean pozymisArIBanka;
-	private String papildomaInfo;
-
-	public PajamuIrasas(double suma, boolean pozymisArIBanka, String papildomaInfo) {
-		super();
-		this.suma = suma;
-		this.pozymisArIBanka = pozymisArIBanka;
-		this.papildomaInfo = papildomaInfo;
-		counter();
 	}
 
 	public double getSuma() {
