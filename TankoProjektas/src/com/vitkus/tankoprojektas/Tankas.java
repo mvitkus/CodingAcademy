@@ -64,8 +64,8 @@ public class Tankas {
 
 	public void Pirmyn() {
 
-		Double x = point.getX();
-		Double y = point.getY();
+		int x = point.getX();
+		int y = point.getY();
 
 		y = y + 1;
 
@@ -80,8 +80,8 @@ public class Tankas {
 
 	public void Atgal() {
 
-		Double x = point.getX();
-		Double y = point.getY();
+		int x = point.getX();
+		int y = point.getY();
 
 		y = y - 1;
 
@@ -96,8 +96,8 @@ public class Tankas {
 
 	public void Dešinėn() {
 
-		Double x = point.getX();
-		Double y = point.getY();
+		int x = point.getX();
+		int y = point.getY();
 
 		x = x + 1;
 
@@ -112,8 +112,8 @@ public class Tankas {
 
 	public void Kairėn() {
 
-		Double x = point.getX();
-		Double y = point.getY();
+		int x = point.getX();
+		int y = point.getY();
 
 		x = x - 1;
 
