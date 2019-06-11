@@ -7,6 +7,8 @@ import java.util.Date;
 public class Tankas {
 
 	private Point point = new Point(0, 0);
+	
+
 
 	private int šūvisĮpriekį = 0;
 	private int šūvisAtgal = 0;
@@ -53,7 +55,7 @@ public class Tankas {
 		this.kryptis = kryptis;
 	}
 
-	private Kryptys kryptis;
+	private Kryptys kryptis = Kryptys.PIRMYN;
 
 //	private Point getPoint() {
 //		return point;

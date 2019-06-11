@@ -6,6 +6,7 @@ public class Main {
 	public static void main(String[] Args) {
 		
 		TankPic tankpic = new TankPic();
+		tankpic.printTank();
 		Scanner sc = new Scanner(System.in);
 		Tankas tankas = new Tankas();
 		String input;
@@ -42,6 +43,7 @@ public class Main {
 			}
 			if(input.equals("x")) {
 				runProgram=false;
+				tankpic.printTank();
 				break;
 			}
 			
