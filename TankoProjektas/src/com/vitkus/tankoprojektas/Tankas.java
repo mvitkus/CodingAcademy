@@ -73,6 +73,8 @@ public class Tankas {
 		point.setY(y);
 
 		setKryptis(Kryptys.PIRMYN);
+		
+		System.out.println("Tankas pajuda į Šiaurę " + point);
 
 	}
 
@@ -87,6 +89,8 @@ public class Tankas {
 		point.setY(y);
 
 		setKryptis(Kryptys.ATGAL);
+		
+		System.out.println("Tankas pajuda į Pietus " + point);
 
 	}
 
@@ -101,6 +105,8 @@ public class Tankas {
 		point.setY(y);
 
 		setKryptis(Kryptys.DEŠINĖ);
+		
+		System.out.println("Tankas pajuda į Rytus " + point);
 
 	}
 
@@ -115,6 +121,8 @@ public class Tankas {
 		point.setY(y);
 
 		setKryptis(Kryptys.KAIRĖ);
+		
+		System.out.println("Tankas pajuda į Vakarus " + point);
 
 	}
 
@@ -122,32 +130,57 @@ public class Tankas {
 		
 		if(getKryptis() == Kryptys.PIRMYN) {
 			setŠūvisĮpriekį(šūvisĮpriekį+1);
+			System.out.println("Šūvis į Šiaurę");
 		}else if(getKryptis() == Kryptys.ATGAL) {
 			setŠūvisAtgal(šūvisAtgal+1);
+			System.out.println("Šūvis į Pietus");
 		}else if(getKryptis() == Kryptys.DEŠINĖ) {
 			setŠūvisĮDešinę(šūvisĮDešinę+1);
-		}else {setŠūvisĮKairę(šūvisĮKairę+1);}
+			System.out.println("Šūvis į Rytus");
+		}else {setŠūvisĮKairę(šūvisĮKairę+1);
+		System.out.println("Šūvis į Vakarus");}
 	}
 
 	public void Info() {
-		System.out.println("Koordinatės: ");
-		System.out.println(point);
 		
-
-		if(SuviaiIsViso()>0) {
-			if(getŠūvisĮpriekį()>0) {
-		System.out.println("Šūviai į priekį: " + getŠūvisĮpriekį() );
-			}
-			if(getŠūvisAtgal()>0) {
-		System.out.println("Šūviai atgal: " + getŠūvisAtgal() );
-			}
-			if(getŠūvisĮDešinę()>0) {
-		System.out.println("Šūviai į dešinę: "+ getŠūvisĮDešinę());
-			}
-			if(getŠūvisĮKairę()>0) {
-		System.out.println("Šūviai į kairę: "+ getŠūvisĮKairę());
-			}
+		System.out.println();
+		System.out.print("INFO: Tanko koordinatės: "+ point);
+		
+		if(getKryptis()== Kryptys.PIRMYN) {
+			System.out.println(", kryptis: VAKARAI ");
 		}
+			
+		if(getKryptis()== Kryptys.ATGAL) {
+			System.out.println(", kryptis: PIETŪS ");
+		}
+		
+		if(getKryptis()== Kryptys.KAIRĖ) {
+			System.out.println(", kryptis: VAKARAI ");
+		}
+		
+		if(getKryptis()== Kryptys.DEŠINĖ) {
+			System.out.println(", kryptis: RYTAI ");
+		}
+				
+		
+		System.out.println();
+		System.out.print("INFO: Tanko šūviai: " );
+		
+		System.out.print(getŠūvisĮpriekį() + " į Šiaurę, " );
+		System.out.print(getŠūvisĮDešinę()+ " į Rytus, ");
+		
+		System.out.print(getŠūvisAtgal()+ " į Pietus, " );
+		System.out.print(getŠūvisĮKairę()+ " į Vakarus, ");
+		
+		 int suviaiTotal = getŠūvisAtgal()+getŠūvisĮDešinę()+getŠūvisĮKairę()+getŠūvisĮpriekį();
+		
+		System.out.println("Iš viso šūvių: "+ suviaiTotal);
+		
+		
+			
+		
+		
+		System.out.println();
 
 	}
 	
