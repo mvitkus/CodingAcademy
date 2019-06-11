@@ -1,5 +1,9 @@
 package com.vitkus.tankoprojektas;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Tankas {
 
 	private Point point = new Point(0, 0);
@@ -71,7 +75,7 @@ public class Tankas {
 
 		setKryptis(Kryptys.PIRMYN);
 
-		System.out.println("Tankas pajuda į Šiaurę " + point);
+		System.out.println("["+printLaika()+"]" +"Tankas pajuda į Šiaurę " + point);
 
 	}
 
@@ -87,7 +91,7 @@ public class Tankas {
 
 		setKryptis(Kryptys.ATGAL);
 
-		System.out.println("Tankas pajuda į Pietus " + point);
+		System.out.println("["+printLaika()+"]" +"Tankas pajuda į Pietus " + point);
 
 	}
 
@@ -103,7 +107,7 @@ public class Tankas {
 
 		setKryptis(Kryptys.DEŠINĖ);
 
-		System.out.println("Tankas pajuda į Rytus " + point);
+		System.out.println("["+printLaika()+"]" +"Tankas pajuda į Rytus " + point);
 
 	}
 
@@ -119,7 +123,9 @@ public class Tankas {
 
 		setKryptis(Kryptys.KAIRĖ);
 
-		System.out.println("Tankas pajuda į Vakarus " + point);
+		
+		System.out.println("["+printLaika()+"]" + " Tankas pajuda į Vakarus " + point);
+		
 
 	}
 
@@ -127,23 +133,23 @@ public class Tankas {
 
 		if (getKryptis() == Kryptys.PIRMYN) {
 			setŠūvisĮpriekį(šūvisĮpriekį + 1);
-			System.out.println("Šūvis į Šiaurę");
+			System.out.println("["+printLaika()+"]" +"Šūvis į Šiaurę");
 		} else if (getKryptis() == Kryptys.ATGAL) {
 			setŠūvisAtgal(šūvisAtgal + 1);
-			System.out.println("Šūvis į Pietus");
+			System.out.println("["+printLaika()+"]" +"Šūvis į Pietus");
 		} else if (getKryptis() == Kryptys.DEŠINĖ) {
 			setŠūvisĮDešinę(šūvisĮDešinę + 1);
-			System.out.println("Šūvis į Rytus");
+			System.out.println("["+printLaika()+"]" +"Šūvis į Rytus");
 		} else {
 			setŠūvisĮKairę(šūvisĮKairę + 1);
-			System.out.println("Šūvis į Vakarus");
+			System.out.println("["+printLaika()+"]" +"Šūvis į Vakarus");
 		}
 	}
 
 	public void Info() {
 
 		
-		System.out.print("INFO: Tanko koordinatės: " + point);
+		System.out.print("["+printLaika()+"]" +"INFO: Tanko koordinatės: " + point);
 
 		if (getKryptis() == Kryptys.PIRMYN) {
 			System.out.println(", kryptis: ŠIAURĖ ");
@@ -162,7 +168,7 @@ public class Tankas {
 		}
 
 		
-		System.out.print("INFO: Tanko šūviai: ");
+		System.out.print("["+printLaika()+"]" +"INFO: Tanko šūviai: ");
 
 		System.out.print(getŠūvisĮpriekį() + " į Šiaurę, ");
 		System.out.print(getŠūvisĮDešinę() + " į Rytus, ");
@@ -176,6 +182,14 @@ public class Tankas {
 
 		
 
+	}
+	public String printLaika() {
+		DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+		Date date = new Date();
+		
+		 String formatedDate =dateFormat.format(date);
+		 
+		return formatedDate;
 	}
 
 
