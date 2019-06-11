@@ -5,7 +5,20 @@ import java.util.Date;
 public class PajamuIrasas {
 	private double suma;
 	private Date data;
-	private int kategorija;
+	private int kategorija = 0;
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public int getKategorija() {
+		return kategorija;
+	}
+
 	private boolean pozymisArIBanka;
 	private String papildomaInfo;
 
@@ -14,6 +27,7 @@ public class PajamuIrasas {
 		this.suma = suma;
 		this.pozymisArIBanka = pozymisArIBanka;
 		this.papildomaInfo = papildomaInfo;
+		counter();
 	}
 
 	public double getSuma() {
@@ -38,5 +52,10 @@ public class PajamuIrasas {
 
 	public void setPapildomaInfo(String papildomaInfo) {
 		this.papildomaInfo = papildomaInfo;
+	}
+
+	public int counter() {
+		kategorija++;
+		return kategorija;
 	}
 }
