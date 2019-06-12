@@ -79,6 +79,31 @@ public class Main {
 
 			}
 
+			if (input.equals("6")) {
+				biudzetas.israsas();
+				System.out.println();
+				meniu.printMeniu();
+
+			}
+			
+			if (input.equals("7")) {
+				System.out.println("Ivesti pajamos unikalu numeri:");
+				int numeris = sc.nextInt();
+				biudzetas.istrintiPajamas(numeris);
+				System.out.println();
+				meniu.printMeniu();
+
+			}
+			
+			if (input.equals("8")) {
+				System.out.println("Ivesti islaidos unikalu numeri:");
+				int numeris = sc.nextInt();
+				biudzetas.istrintiIslaidas(numeris);
+				System.out.println();
+				meniu.printMeniu();
+
+			}
+			
 			if (input.equals("x")) {
 				runProgram = false;
 				break;
