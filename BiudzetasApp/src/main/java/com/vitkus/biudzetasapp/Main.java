@@ -12,12 +12,12 @@ public class Main {
 		boolean runProgram = true;
 		Meniu meniu = new Meniu();
 		
-
+		meniu.printMeniu();
 		while (runProgram) {
-			meniu.printMeniu();
+			
 			input = sc.next();
 
-			if (input.equals("p")) {
+			if (input.equals("1")) {
 				
 				System.out.println("Iveskite pajamas: suma, ar gauta i banka (taip, ne), paskirtis");
 				Double suma = sc.nextDouble();
@@ -30,12 +30,46 @@ public class Main {
 				}else {tipas = false;}
 				
 				biudzetas.pridetiPajamuIrasa(suma, tipas, paskirtis);
+				System.out.println();
+				meniu.printMeniu();
 				
 			}
-			if (input.equals("i")) {
+			
+			if (input.equals("2")) {
+				
+				System.out.println("Iveskite Islaidas: suma, ar bankinis pavedimas (taip, ne), paskirtis");
+				Double suma = sc.nextDouble();
+				String rusis = sc.next();
+				String paskirtis = sc.next();
+				boolean tipas;
+		
+				if(rusis == "taip") {
+					tipas = true;
+				}else {tipas = false;}
+				
+				
+				biudzetas.pridetiIslaiduIrasa(suma, tipas, paskirtis);
+				System.out.println();
+				meniu.printMeniu();
+				
+			}
+			
+			
+			if (input.equals("3")) {
 				biudzetas.gautiPajamuIrasa();
+				System.out.println();
+				meniu.printMeniu();
 
 			}
+			
+			if (input.equals("4")) {
+				biudzetas.gautiIslaiduIrasa();
+				System.out.println();
+				meniu.printMeniu();
+
+			}
+			
+			
 			if (input.equals("x")) {
 				runProgram=false;
 				break;
