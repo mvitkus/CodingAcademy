@@ -10,7 +10,7 @@ public class Meniu {
 		System.out.println("[5] - Balansas");
 		System.out.println("[6] - Visas israsas");
 		System.out.println("[7] - Istrinti pajamas");
-		System.out.println("[8] - Istrinti pajamas");
+		System.out.println("[8] - Istrinti islaidas");
 		System.out.println("[x] - Uzbaigti programa");
 
 	}
