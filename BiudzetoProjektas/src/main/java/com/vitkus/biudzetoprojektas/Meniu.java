@@ -51,6 +51,12 @@ public class Meniu {
 				printMenuList();
 				
 			}
+			if (input.equals("9")) {
+				biudzetas.sukurtiCsv();
+
+				printMenuList();
+				
+			}
 			if (input.equals("x")) {
 				System.out.println("Programa uzdaroma..");
 				break;
@@ -73,7 +79,7 @@ public class Meniu {
 		System.out.println("[6] - Visas israsas");
 		System.out.println("[7] - Istrinti irasa");
 		System.out.println("[8] - Redaguoti irasus");
-		
+		System.out.println("[9] - Sukurti Csv");
 		System.out.println("[x] - Uzbaigti programa");
 	}
 	

@@ -13,7 +13,6 @@ public class Irasas {
 	public Irasas(double suma, String papildomaInfo) {
 		super();
 		this.suma = suma;
-		// this.data = data; //TODO
 		this.papildomaInfo = papildomaInfo;
 		setCounter();
 		this.id = counter;

@@ -3,8 +3,6 @@ package com.vitkus.biudzetoprojektas;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.imageio.stream.ImageInputStream;
-
 public class Biudzetas {
 
 	ArrayList<Irasas> biudzetas = new ArrayList<Irasas>();
@@ -109,6 +107,7 @@ public class Biudzetas {
 
 	
 
+	@SuppressWarnings("unlikely-arg-type")
 	public void atnaujintiIrasa() {
 		int pasirinkimas;
 
@@ -180,6 +179,11 @@ public class Biudzetas {
 			biudzetas.remove(redaguoti - 1);
 
 		}
+	}
+	
+	public void sukurtiCsv() {
+		CsvFileWriter csv = new CsvFileWriter();
+		csv.writeCsvFile("Naujas", biudzetas);
 	}
 
 }
