@@ -11,7 +11,7 @@ public class CsvFileWriter {
     private static final String NEW_LINE_SEPARATOR = "\n";
      
     //CSV file header
-    private static final String FILE_HEADER = "id,firstName,lastName,gender,age";
+   // private static final String FILE_HEADER = "id,firstName,lastName,gender,age";
  
     public static void writeCsvFile(String fileName, ArrayList<Irasas> irasai) {
          
@@ -20,13 +20,7 @@ public class CsvFileWriter {
         FileWriter fileWriter = null;
                  
         try {
-            fileWriter = new FileWriter(fileName);
- 
-            //Write the CSV file header
-            fileWriter.append(FILE_HEADER.toString());
-             
-            //Add a new line separator after the header
-            fileWriter.append(NEW_LINE_SEPARATOR);
+            fileWriter = new FileWriter(fileName+".csv");
              
             //Write a new student object list to the CSV file
             for (Irasas irasas : irasai) {
@@ -38,6 +32,21 @@ public class CsvFileWriter {
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(String.valueOf(irasas.getData()));
                 fileWriter.append(COMMA_DELIMITER);
+                
+               
+        			if(irasas instanceof PajamuIrasas) {
+        			    fileWriter.append(String.valueOf(((PajamuIrasas)irasas).getKategorija()));
+                        fileWriter.append(COMMA_DELIMITER);
+                        fileWriter.append(String.valueOf(((PajamuIrasas)irasas).isPozymisArIBanka())+"\n");
+                        
+        			}else if(irasas instanceof IslaiduIrasas) {
+        				 fileWriter.append(String.valueOf(((IslaiduIrasas)irasas).getKategorija()));
+                         fileWriter.append(COMMA_DELIMITER);
+                         fileWriter.append(String.valueOf(((IslaiduIrasas)irasas).isArBankinisPavedimas())+"\n");
+                         
+        			}
+        			
+      
                
             }
  

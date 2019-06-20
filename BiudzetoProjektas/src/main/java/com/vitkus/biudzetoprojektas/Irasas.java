@@ -1,11 +1,12 @@
 package com.vitkus.biudzetoprojektas;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Irasas {
 
 	private double suma;
-	private Date data;
+	private LocalDateTime data;
 	private String papildomaInfo;
 	private static int counter = 0;
 	private int id;
@@ -18,6 +19,15 @@ public class Irasas {
 		this.id = counter;
 		data=printLaika();
 	}
+	
+	public Irasas(int id, double suma, String papildomaInfo, LocalDateTime data) {
+		super();
+		this.suma = suma;
+		this.papildomaInfo = papildomaInfo;
+		setCounter();
+		this.id = id;
+		this.data = data;
+	}
 
 	public double getSuma() {
 		return suma;
@@ -27,7 +37,7 @@ public class Irasas {
 		this.suma = suma;
 	}
 
-	public Date getData() {
+	public LocalDateTime getData() {
 		return data;
 	}
 
@@ -51,8 +61,8 @@ public class Irasas {
 		counter++;
 	}
 	
-	public Date printLaika() {
-		Date date = new Date();
+	public LocalDateTime printLaika() {
+		LocalDateTime date = LocalDateTime.now();
 		return date;
 }
 

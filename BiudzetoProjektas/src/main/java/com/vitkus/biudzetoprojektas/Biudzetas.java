@@ -1,5 +1,6 @@
 package com.vitkus.biudzetoprojektas;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -39,10 +40,10 @@ public class Biudzetas {
 			paskirtis += sc.nextLine();
 
 			boolean tipas;
-			if (rusis == "taip") {
-				tipas = true;
-			} else {
+			if (rusis == "ne") {
 				tipas = false;
+			} else {
+				tipas = true;
 			}
 
 			IslaiduIrasas isl = new IslaiduIrasas(suma, paskirtis, tipas);
@@ -183,7 +184,18 @@ public class Biudzetas {
 	
 	public void sukurtiCsv() {
 		CsvFileWriter csv = new CsvFileWriter();
-		csv.writeCsvFile("Naujas", biudzetas);
+		
+		System.out.println("Iveskite failo pavadinima");
+
+		String failoPavadinimas = sc.next();
+		csv.writeCsvFile(failoPavadinimas, biudzetas);
+	}
+	
+	public void istrauktiInfoIsCsv() throws ParseException {
+		CscFileReader csv = new CscFileReader();
+		System.out.println("Iveskite failo pavadinima");
+		String failoPavadinimas = sc.next();
+		csv.getFromCsv(failoPavadinimas, biudzetas);
 	}
 
 }

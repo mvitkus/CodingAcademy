@@ -2,6 +2,9 @@ package com.vitkus.biudzetoprojektas;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class IslaiduIrasas extends Irasas{
 	
@@ -15,6 +18,12 @@ public class IslaiduIrasas extends Irasas{
 		
 	}
 
+	public IslaiduIrasas(int id, double suma, String papildomaInfo, LocalDateTime data, int kategorija, boolean arBankinis) {
+		super(suma, papildomaInfo);
+		this.arBankinisPavedimas = arBankinisPavedimas;
+		this.kategorija=kategorija;
+		
+	}
 
 	
 
@@ -38,13 +47,20 @@ public class IslaiduIrasas extends Irasas{
 	
 	@Override
 	public String toString() { 
-		DateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd HH:mm");
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		String kat ="";
 		if(this.getKategorija()==0) {
 			 kat = "islaidos";
 		}
+		String arBankinis=" ";
 		
-	    return this.getId()+") "+"Suma: " + this.getSuma()+" Eur" + " | Papildoma info "+ getPapildomaInfo()+" | Kategorija: "+ kat + " | Data: " + dateFormat.format(this.getData());
+		if(this.isArBankinisPavedimas()==true) {
+			arBankinis = "Islaidos  bankiniu pavedimu";
+		}else {
+			arBankinis="Islaidos grynais pinigais";
+		}
+		
+	    return this.getId()+") "+"Suma: " + this.getSuma()+" Eur" + " | Papildoma info "+ getPapildomaInfo()+" | Kategorija: "+ kat + " | Data: " + dateFormat.format(this.getData())+" | "+arBankinis;
 	} 
 	
 
