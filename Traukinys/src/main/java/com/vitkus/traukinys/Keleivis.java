@@ -26,11 +26,10 @@ public class Keleivis {
 	public void setPavarde(String pavarde) {
 		this.pavarde = pavarde;
 	}
-	
-	
+
 	@Override
 	public String toString() {
-		return this.getVardas() + " "+ this.getPavarde();
+		return this.getVardas() + " " + this.getPavarde();
 	}
 
 }

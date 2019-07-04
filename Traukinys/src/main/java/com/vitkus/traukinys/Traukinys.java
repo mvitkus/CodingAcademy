@@ -50,13 +50,26 @@ public class Traukinys extends TransportoPriemone {
 	}
 
 	public void vaziuoti() {
-		setArVaziuoja(true);
-		System.out.println("Traukinys vaziuoja..");
+
+		if (arVaziuoja == false) {
+			setArVaziuoja(true);
+			System.out.println("Traukinys vaziuoja..");
+		} else {
+			System.out.println("Traukinys jau vaziuoja.");
+		}
+
 	}
 
 	public void sustoti() {
-		setArVaziuoja(false);
-		System.out.println("Traukinys sustojo..");
+
+		if (arVaziuoja == true) {
+			setArVaziuoja(false);
+			System.out.println("Traukinys sustojo..");
+
+		} else {
+			System.out.println("Traukinys jau sustojes.");
+		}
+
 	}
 
 	public void gautiKeleiviuSarasa() {
@@ -69,9 +82,21 @@ public class Traukinys extends TransportoPriemone {
 	public void issaugotiDuomenisIFaila() {
 	}
 
-	public void ilaipintiKeleivi(Keleivis keleivisAdd) {
+	public void ilaipintiKeleivi(Keleivis keleivisAdd) throws PerpildytaException {
+		if(keleivis.size()>sedimosVietos) {
+			
+			throw new PerpildytaException("Traukinys pilnas");
+		}else {
 		keleivis.add(keleivisAdd);
+		}
 
 	}
+	
+//	public static void maxKeleiviai(int sedimosVietos, ArrayList<Keleivis> keleivis) throws PerpildytaException{
+//		
+//		
+//	}
+
+
 
 }

@@ -1,5 +1,8 @@
 package com.vitkus.traukinys;
 
-public class TransportoPriemone {
-
+abstract class TransportoPriemone {
+	abstract  void vaziuoti();
+	abstract  void sustoti();
+	
+	
 }
