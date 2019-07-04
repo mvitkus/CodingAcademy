@@ -17,11 +17,13 @@ public class Main {
 
 		traukinys.vaziuoti();
 		traukinys.gautiKeleiviuSarasa();
-		traukinys.sustoti();
-		traukinys.islaipintiVisusKeleivius();
-		traukinys.gautiKeleiviuSarasa();
-		traukinys.vaziuoti();
-		traukinys.gautiKeleiviuSarasa();
+		traukinys.irasytiIfaila("traukinioKeleiviai");
+		
+//		traukinys.sustoti();
+//		traukinys.islaipintiVisusKeleivius();
+//		traukinys.gautiKeleiviuSarasa();
+//		traukinys.vaziuoti();
+//		traukinys.gautiKeleiviuSarasa();
 
 	}
 }

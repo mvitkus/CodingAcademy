@@ -1,5 +1,7 @@
 package com.vitkus.traukinys;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Traukinys extends TransportoPriemone {
@@ -83,20 +85,48 @@ public class Traukinys extends TransportoPriemone {
 	}
 
 	public void ilaipintiKeleivi(Keleivis keleivisAdd) throws PerpildytaException {
-		if(keleivis.size()>sedimosVietos) {
-			
+		if (keleivis.size() > sedimosVietos) {
+
 			throw new PerpildytaException("Traukinys pilnas");
-		}else {
-		keleivis.add(keleivisAdd);
+		} else {
+			keleivis.add(keleivisAdd);
 		}
 
 	}
-	
-//	public static void maxKeleiviai(int sedimosVietos, ArrayList<Keleivis> keleivis) throws PerpildytaException{
-//		
-//		
-//	}
 
+	public void irasytiIfaila(String filename) {
+		final String COMMA_DELIMITER = ",";
+		FileWriter fileWriter = null;
 
+		try {
+			fileWriter = new FileWriter(filename + ".csv");
+
+			// Write a new student object list to the CSV file
+			for (Keleivis keleiviai : keleivis) {
+				fileWriter.append(String.valueOf(keleiviai.getVardas()));
+				fileWriter.append(COMMA_DELIMITER);
+				fileWriter.append(String.valueOf(keleiviai.getPavarde())+"\n");
+			
+
+			}
+
+			System.out.println("CSV failas sukurtas sekmingai! Failo pavadinimas: " + filename);
+
+		} catch (Exception e) {
+			System.out.println("Klaida failo irasyme");
+			e.printStackTrace();
+		} finally {
+
+			try {
+				fileWriter.flush();
+				fileWriter.close();
+			} catch (IOException e) {
+				System.out.println("Error while flushing/closing fileWriter !!!");
+				e.printStackTrace();
+			}
+
+		}
+
+	}
 
 }
