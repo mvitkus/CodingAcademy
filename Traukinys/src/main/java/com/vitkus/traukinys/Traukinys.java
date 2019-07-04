@@ -48,6 +48,7 @@ public class Traukinys extends TransportoPriemone {
 			System.out.println("Traukinys vaziuoja, islaipinti negalima");
 		} else {
 			keleivis.clear();
+			System.out.println("Visi keleiviai buvo islaipinti");
 		}
 	}
 
@@ -85,7 +86,8 @@ public class Traukinys extends TransportoPriemone {
 	}
 
 	public void ilaipintiKeleivi(Keleivis keleivisAdd) throws PerpildytaException {
-		if (keleivis.size() > sedimosVietos) {
+		
+		if (keleivis.size()+1 > sedimosVietos) {
 
 			throw new PerpildytaException("Traukinys pilnas");
 		} else {
