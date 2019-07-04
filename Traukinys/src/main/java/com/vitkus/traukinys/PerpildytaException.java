@@ -1,7 +1,7 @@
 package com.vitkus.traukinys;
 
 public class PerpildytaException extends Exception {
-	
+
 	/**
 	 * 
 	 */
@@ -20,7 +20,5 @@ public class PerpildytaException extends Exception {
 	public void setPriezastis(String priezastis) {
 		this.priezastis = priezastis;
 	}
-	
-	
 
 }

@@ -105,8 +105,7 @@ public class Traukinys extends TransportoPriemone {
 			for (Keleivis keleiviai : keleivis) {
 				fileWriter.append(String.valueOf(keleiviai.getVardas()));
 				fileWriter.append(COMMA_DELIMITER);
-				fileWriter.append(String.valueOf(keleiviai.getPavarde())+"\n");
-			
+				fileWriter.append(String.valueOf(keleiviai.getPavarde()) + "\n");
 
 			}
 
