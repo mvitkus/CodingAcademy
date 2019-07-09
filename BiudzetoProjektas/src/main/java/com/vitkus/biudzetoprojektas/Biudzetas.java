@@ -70,7 +70,7 @@ public class Biudzetas {
 	}
 
 	public ArrayList<IslaiduIrasas> gautiIslaiduIrasus() {
-		
+
 		ArrayList<IslaiduIrasas> islaidos = new ArrayList<IslaiduIrasas>();
 
 		for (int i = 0; i < biudzetas.size(); i++) {
@@ -91,22 +91,18 @@ public class Biudzetas {
 
 	public void irasuBalansas() {
 
-		float pajamuSuma =0;
-		float islaiduSuma =0;
-		for(int i=0; i<biudzetas.size();i++) {
-			if(biudzetas.get(i) instanceof PajamuIrasas) {
-				pajamuSuma=(float) (pajamuSuma+biudzetas.get(i).getSuma());
-			}else if(biudzetas.get(i) instanceof IslaiduIrasas) {
-				islaiduSuma=(float) (islaiduSuma+biudzetas.get(i).getSuma());
+		float pajamuSuma = 0;
+		float islaiduSuma = 0;
+		for (int i = 0; i < biudzetas.size(); i++) {
+			if (biudzetas.get(i) instanceof PajamuIrasas) {
+				pajamuSuma = (float) (pajamuSuma + biudzetas.get(i).getSuma());
+			} else if (biudzetas.get(i) instanceof IslaiduIrasas) {
+				islaiduSuma = (float) (islaiduSuma + biudzetas.get(i).getSuma());
 			}
-			}
-		float balansas=pajamuSuma-islaiduSuma;
-		System.out.println("Balansas: "+balansas);
 		}
-
-		
-
-	
+		float balansas = pajamuSuma - islaiduSuma;
+		System.out.println("Balansas: " + balansas);
+	}
 
 	@SuppressWarnings("unlikely-arg-type")
 	public void atnaujintiIrasa() {
@@ -176,21 +172,23 @@ public class Biudzetas {
 		gautiIrasus();
 		System.out.println("Pasirinkite ID");
 		int redaguoti = sc.nextInt();
-		if (biudzetas.get(redaguoti - 1).equals(biudzetas.get(redaguoti - 1).getId())) {
-			biudzetas.remove(redaguoti - 1);
 
+		for (int i = 0; i < biudzetas.size(); i++) {
+			if (redaguoti==(biudzetas.get(i).getId())) {
+				biudzetas.remove(i);
+			}
 		}
 	}
-	
+
 	public void sukurtiCsv() {
 		CsvFileWriter csv = new CsvFileWriter();
-		
+
 		System.out.println("Iveskite failo pavadinima");
 
 		String failoPavadinimas = sc.next();
 		csv.writeCsvFile(failoPavadinimas, biudzetas);
 	}
-	
+
 	public void istrauktiInfoIsCsv() throws ParseException {
 		CscFileReader csv = new CscFileReader();
 		System.out.println("Iveskite failo pavadinima");

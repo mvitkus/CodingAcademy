@@ -2,10 +2,12 @@ package com.vitkus.traukinys;
 
 public class PerpildytaException extends Exception {
 
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private String priezastis;
 
 	public PerpildytaException(String priezastis) {

@@ -82,8 +82,8 @@ public class Traukinys extends TransportoPriemone {
 		}
 	}
 
-	public void issaugotiDuomenisIFaila() {
-	}
+//	public void issaugotiDuomenisIFaila() {
+//	}
 
 	public void ilaipintiKeleivi(Keleivis keleivisAdd) throws PerpildytaException {
 		
