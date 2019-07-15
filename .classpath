@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Biudzetas/src/main/java"/>
+	<classpathentry kind="src" path="BiudzetoProjektas/src/main/java"/>
+	<classpathentry kind="src" path="RandomString/src"/>
+	<classpathentry kind="src" path="TankoProjektas/src"/>
+	<classpathentry kind="src" path="Traukinys/src/main/java"/>
+	<classpathentry kind="output" path="BiudzetoProjektas/target/classes"/>
+</classpath>
