@@ -1,5 +1,5 @@
 
-public class Student {
+public class Student implements Comparable<Student>{
 	
 	private String vardas;
 	private String pavarde;
@@ -28,6 +28,22 @@ public class Student {
 	}
 	public void setStudentID(int studentID) {
 		this.studentID = studentID;
+	}
+	@Override
+	public int compareTo(Student arg0) {
+		int i = this.getVardas().compareTo(arg0.getVardas());
+		if(i!=0) {
+			return i;
+		}i = this.getPavarde().compareTo(arg0.getPavarde());
+		if(i!=0) {
+			return i;
+		}
+		
+		return this.getStudentID() - arg0.getStudentID();
+	}
+	
+	public String toString() {
+		return this.getVardas()+" "+ this.getPavarde()+ " " + this.getStudentID();
 	}
 	
 	

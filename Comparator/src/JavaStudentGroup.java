@@ -1,16 +1,38 @@
+import java.awt.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class JavaStudentGroup {
+	
 
 	ArrayList<Student> Studentai = new ArrayList<Student>();
 
-	public void printArray() {
-		for (int i = 0; i < Studentai.size(); i++) {
-			System.out.println("Vardas: " + Studentai.get(i).getVardas() + " " + "Pavarde: "
-					+ Studentai.get(i).getPavarde() + " " + "ID: " + Studentai.get(i).getStudentID());
-		}
+//	public void printArray() {
+//		for (int i = 0; i < Studentai.size(); i++) {
+//			System.out.println("Vardas: " + Studentai.get(i).getVardas() + " " + "Pavarde: "
+//					+ Studentai.get(i).getPavarde() + " " + "ID: " + Studentai.get(i).getStudentID());
+//		}
+//	}
+	
+	public void runProgram() {
+		
+		addToArray();
+		printStudents();
+		Collections.sort(Studentai);
+		System.out.println("##############");
+		printStudents();
 	}
 
+	public  void printStudents() {
+		
+
+		
+		for(Student studentai : Studentai) {
+			System.out.println(studentai);
+			
+		}
+	}
+	
 	public void addToArray() {
 		for (int i = 0; i < 20; i++) {
 			String name = generateRandomString();
@@ -42,5 +64,7 @@ public class JavaStudentGroup {
 		}
 		return sb.toString();
 	}
+	
+	
 
 }
