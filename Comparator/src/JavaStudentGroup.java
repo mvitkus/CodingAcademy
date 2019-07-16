@@ -5,23 +5,23 @@ import java.util.Random;
 public class JavaStudentGroup {
 
 	ArrayList<Student> Studentai = new ArrayList<Student>();
+	ArrayList<Student> studentai1 = new ArrayList<Student>();
+	ArrayList<Student> studentai2 = new ArrayList<Student>();
+	ArrayList<Student> studentai3 = new ArrayList<Student>();
+	ArrayList<Student> studentai4 = new ArrayList<Student>();
 
 	public void runProgram() {
 
 		addToArray();
 
 		printStudents(Studentai);
-
 		Collections.sort(Studentai);
 		System.out.println("##############");
 		printStudents(Studentai);
 
 		System.out.println();
 
-		ArrayList<Student> studentai1 = new ArrayList<Student>();
-		ArrayList<Student> studentai2 = new ArrayList<Student>();
-		ArrayList<Student> studentai3 = new ArrayList<Student>();
-		ArrayList<Student> studentai4 = new ArrayList<Student>();
+	
 
 		int i = 0;
 		while (i <= Studentai.size()) {
@@ -47,16 +47,34 @@ public class JavaStudentGroup {
 				break;
 			}
 		}
-
+		System.out.println();
+		System.out.println("Pirmas listas.");
 		printStudents(studentai1);
-		System.out.println("##########");
+		System.out.println();
+		System.out.println("Antras listas.");
 		printStudents(studentai2);
-		System.out.println("##########");
+		System.out.println();
+		System.out.println("Trecias listas.");
 		printStudents(studentai3);
-		System.out.println("##########");
+		System.out.println();
+		System.out.println("Ketvirtas listas.");
 		printStudents(studentai4);
-		System.out.println("##########");
+		System.out.println("#################");
+		System.out.println("Patikrinimas: ");
+		System.out.println(patikrinimas());
+		
+		
 
+	}
+	public boolean patikrinimas() {
+		boolean patikrinimas=false;
+		
+		if(Studentai.size()==studentai1.size()+studentai2.size()+studentai3.size()+studentai4.size()) {
+			patikrinimas = true;
+		}
+		
+		
+		return patikrinimas;
 	}
 
 	public void printStudents(ArrayList<Student> listas) {
@@ -66,7 +84,7 @@ public class JavaStudentGroup {
 	}
 
 	public void addToArray() {
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 10; i++) {
 			String name = generateRandomString().substring(0, 1).toUpperCase()
 					+ generateRandomString().substring(1).toLowerCase();
 			String surname = generateRandomString().substring(0, 1).toUpperCase()

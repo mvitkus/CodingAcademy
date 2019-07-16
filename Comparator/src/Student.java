@@ -38,7 +38,6 @@ public class Student implements Comparable<Student>{
 		if(i!=0) {
 			return i;
 		}
-		
 		return this.getStudentID() - arg0.getStudentID();
 	}
 	
