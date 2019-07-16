@@ -1,5 +1,5 @@
 
-public class HttpErrorPair<T, HttpCodea extends HttpCode> {
+public class HttpErrorPair<T, HttpCodea extends HttpCode> implements Comparable<HttpErrorPair>{
 	private T key;
 	private HttpCodea value;
 
@@ -27,6 +27,11 @@ public class HttpErrorPair<T, HttpCodea extends HttpCode> {
 
 	public String toString() {
 		return "HttpErrorPair{" + "key=" + key + ", code=" + value + '}';
+	}
+
+	@Override
+	public int compareTo(HttpErrorPair arg0) {
+		return this.getValue().compareTo(arg0.getValue());
 	}
 
 }

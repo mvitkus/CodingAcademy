@@ -7,6 +7,10 @@ public enum ErrorLevels {
     private ErrorLevels(int levelCode) {
         this.levelCode = levelCode;
     }
+
+	public int getLevelCode() {
+		return levelCode;
+	}
     
 
 
