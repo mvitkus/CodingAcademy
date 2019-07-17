@@ -14,15 +14,9 @@ public class AsmensKodoGeneratorius {
 		skaitliukas.getN();
 
 		String skaicius;
-		skaicius = skaitliukas.didintiVienetu();
-		skaicius = skaitliukas.didintiVienetu();
-		skaicius = skaitliukas.didintiVienetu();
-		skaicius = skaitliukas.didintiVienetu();
-		System.out.println(skaicius);
 
 		skaitliukas.nustatytiNumatytajaReiksme();
 
-		System.out.println(skaicius);
 		
 		
 		System.out.println("Vyriski id:");
@@ -47,6 +41,8 @@ public class AsmensKodoGeneratorius {
 			String galutinis = sugeneruotas+vienas;
 			System.out.println(galutinis);
 		}
+		
+
 
 	}
 	
